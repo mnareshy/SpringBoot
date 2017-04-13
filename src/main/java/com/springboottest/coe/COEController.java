@@ -37,5 +37,17 @@ public class COEController {
 		return coeService.addCOE(coe);
 		
 	}
+	
+	@RequestMapping(method=RequestMethod.PUT, value="/COES/{name}")
+	public boolean updateCOE(@RequestBody COE coe, @PathVariable String name){
+		
+		return coeService.updateCOE(coe, name);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/COES/{name}")
+	public boolean deleteCOE(@PathVariable String name){
+		
+		return coeService.deleteCOE(name);
+	}
 
 }

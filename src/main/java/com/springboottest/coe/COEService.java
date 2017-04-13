@@ -32,4 +32,28 @@ public class COEService {
 		return coeList.add(coe);
 	}
 
+
+	public boolean updateCOE(COE coe, String name) {
+		// TODO Auto-generated method stub
+		
+		for (int i = 0; i < coeList.size(); i++) {
+			
+			if(name.equals(coeList.get(i).getName()))
+			{
+				coeList.set(i, coe);
+				return true;
+			}
+			
+		}
+		
+		return false;
+		
+	}
+
+
+	public boolean deleteCOE(String name) {
+		
+		return coeList.removeIf(t -> t.getName().equals(name));
+	}
+
 }
