@@ -1,6 +1,9 @@
 package com.springboottest.coe;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class COE {
 	
 	public COE(String name, String noOfEmps, String description, String primaryTechnology) {
@@ -17,6 +20,7 @@ public class COE {
 	}
 	
 	
+	@Id
 	private String name;
 	private String noOfEmps;
 	private String description;
