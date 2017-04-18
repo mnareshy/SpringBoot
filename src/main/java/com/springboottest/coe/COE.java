@@ -1,5 +1,8 @@
 package com.springboottest.coe;
 
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -26,6 +29,9 @@ public class COE {
 	private String description;
 	private String primaryTechnology;
 	
+	@ElementCollection
+	private List<String> departments;
+	
 	
 	public String getName() {
 		return name;
@@ -50,6 +56,18 @@ public class COE {
 	}
 	public void setPrimaryTechnology(String primaryTechnology) {
 		this.primaryTechnology = primaryTechnology;
+	}
+
+	public List<String> getDepartments() {
+		return departments;
+	}
+
+	public void setDepartments(List<String> departments) {
+		this.departments = departments;
+	}
+	
+	public void setDepartment(String department) {
+		this.departments.add(department);
 	}
 	
 
